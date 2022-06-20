@@ -70,7 +70,7 @@ and values of bands.
 
     plot(nir, 1:6, col = gray.colors(n = 16, start = 0))
 
-![](theme2_exercise_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](theme2_exercise_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 We can now also add vector of dates assigned to each image. It should be
 noted that selected images are mosaics of two different images. For them
@@ -177,8 +177,10 @@ This is result example.
 
 <img src="media_exercise/chips_example_1.png" title="Point 1. Bark beetle outbreak" alt="Point 1" width="1080"/>
 
-    Now we will plot values for 3 spectral indices. We need to prepare our plotting area in a different way to previous plot. Additionally we need to prepare numerical data. For each spectral index we extract 30 values from attribute table.
-
+Now we will plot values for 3 spectral indices. We need to prepare our
+plotting area in a different way to previous plot. Additionally we need
+to prepare numerical data. For each spectral index we extract 30 values
+from attribute table.
 
     dev.new(width = 1920, height = 1080, unit = "px")
 
