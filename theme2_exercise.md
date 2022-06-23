@@ -49,7 +49,7 @@ calculated using the higher NDVI value between two images.
 
 <figure>
 
-<img src="media_exercise/tatra_mountains_1984_2016.png" title="Tatra Mountains 1984-2016" alt="Point 1" width="1080"/>
+<img src="media_exercise/tatra_mountains_1984_2016.PNG" title="Tatra Mountains 1984-2016" alt="Point 1" width="1080"/>
 
 <figcaption align="center">
 
