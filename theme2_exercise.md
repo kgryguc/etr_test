@@ -20,13 +20,13 @@ For this exercise you will need the following software, data and tools:
 
 -   Software
 
--   R with RStudio (additional libraries required: raster, sf, dplyr).
-    You can access environment setup tutorial for the whole Module 2
-    here: -insert link to environment setup tutorial-
+    -   R with RStudio (additional libraries required: raster, sf,
+        dplyr). You can access environment setup tutorial for the whole
+        Module 2 here: -insert link to environment setup tutorial-
 
 -   Data
 
--   Downloaded data provided in the folder -link-
+    -   Downloaded data provided in the folder -link-
 
 #### Data
 

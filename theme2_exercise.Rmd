@@ -25,21 +25,28 @@ For this exercise you will need the following software, data and tools:
 
 -   Software
 
--   R with RStudio (additional libraries required: raster, sf, dplyr). You can access environment setup tutorial for the whole Module 2 here: -insert link to environment setup tutorial-
+    -   R with RStudio (additional libraries required: raster, sf, dplyr). You can access environment setup tutorial for the whole Module 2 here: -insert link to environment setup tutorial-
 
 -   Data
 
--   Downloaded data provided in the folder -link-
+    -   Downloaded data provided in the folder -link-
 
 #### Data
 
-The imagery provided for this exercise consists of Landsat (generations 5, 7 and 8) satellite imagery time series for 1984-2016 period. Generated time series consisted of images from summer period, defined asthe period between June 15 and Septemper 15. Images for each available year (years 1990, 1998 and 2004 were omitted due to low quality data - high cloud cover being the main reason for omittment) have been subjected to atmospheric and topographic correction using ATCOR 2/3 software. The results of corrections were validated with surface reflectance measurements collected in-situ. Images have also been harmonized to Landsat 8 surface reflectance values by linear regression obtained from comparison of clear pixel values among TM-ETM+ and ETM+-OLI sensors. 
+The imagery provided for this exercise consists of Landsat (generations 5, 7 and 8) satellite imagery time series for 1984-2016 period. Generated time series consisted of images from summer period, defined asthe period between June 15 and Septemper 15. Images for each available year (years 1990, 1998 and 2004 were omitted due to low quality data - high cloud cover being the main reason for omittment) have been subjected to atmospheric and topographic correction using ATCOR 2/3 software. The results of corrections were validated with surface reflectance measurements collected in-situ. Images have also been harmonized to Landsat 8 surface reflectance values by linear regression obtained from comparison of clear pixel values among TM-ETM+ and ETM+-OLI sensors.
 
 It should be noted that due to cloud cover in some periods, selected images (14/30) are composites of two different images. Composited were calculated using the higher NDVI value between two images.
 
+```{css, echo=FALSE}
+
+figcaption {
+  text-align: center;
+}
+```
+
 <figure>
 
-<img src="media_exercise/tatra_mountains_1984_2016.png" title="Tatra Mountains 1984-2016" alt="Point 1" width="1080"/>
+<img src="media_exercise/tatra_mountains_1984_2016.PNG" title="Tatra Mountains 1984-2016" alt="Point 1" width="1080"/>
 
 <figcaption align="center">
 
@@ -48,7 +55,6 @@ It should be noted that due to cloud cover in some periods, selected images (14/
 </figcaption>
 
 </figure>
-
 
 Results of preprocessing were 30 6-band (corresponding to Landsat 5 bands 1-5 and 7) bricks, which in turn were used to calculate spectral indices. For this exercise, you will use 30-layer raster bricks of bands 4 (NIR), 3 (red) and 2 (green) for displaying the data and vector data with reference points. Points have assigned attributes regarding year of detected change, change agent and time series values of three spectral indices: NDVI, NDMI and NBR.
 
@@ -105,8 +111,6 @@ There are 9 points into reference layer with attributes of year of change detect
 Now that we have all the required data we can prepare our plotting environment. Our goal is to overview so called image chips, which are parts of the images surrounding reference points. For now, we will use point number 1 as an example. In further part of the exercise we will create a loop to perform each step for all of the points.
 
 Now we will pick one of the points and based on the coordinates we will outline the range of the chip. We will use chips which are 39x39 pixels in area.
-
-
 
 ```{r message = FALSE, eval = FALSE}
 point_number <- 1 # indicate the number of point as read into the environment
@@ -178,11 +182,11 @@ for (j in seq(30)){ # loop 30 times - once for each raster in the brick
 dev.off() # turn off the device - save .png image to working directory
 ```
 
-This is the result of running the code above. 
+This is the result of running the code above.
 
 <img src="media_exercise/chips_example.png" title="Point 1. Bark beetle outbreak" alt="Point 1 - chips" width="1080"/>
 
-As you can see we managed to plot the whole timeseries in one image, which allows for easier visual comparison of the images. 
+As you can see we managed to plot the whole timeseries in one image, which allows for easier visual comparison of the images.
 
 Now we will plot values for 3 spectral indices. We need to prepare our plotting area in a different way to previous plot. Additionally we need to prepare numerical data. For each spectral index we extract 30 values from attribute table.
 
@@ -264,8 +268,7 @@ The result of the above chunk of code should look like this.
 
 Now we can automate our processing by looping previous functions and merging two output images into one containing both chips and trajectories into one image. Most of the code will remain similar with a few modifications needed for the loop to work properly. Changed code line will be indicated by comments in the code chunk.
 
-
-``` {r message = FALSE, eval = FALSE}
+```{r message = FALSE, eval = FALSE}
 window_size <- 39 # set up window size for all elements which will come out of the loop
 
 for (i in seq(nrow(points))){ # the loop will last till all of the points in the layer are used
@@ -400,14 +403,6 @@ All of the resulting images should be looking like the example below.
 
 <img src="media_exercise/all_elements_example.png" title="Point 1. Bark beetle outbreak" alt="Point 1 - all elements" width="1080"/>
 
-
 Now analyze the resulting 9 images. Focus on recognizing changes visible in the chips; try to find the year of change based on the visual interpretation and compare your guess to the date in the attribute table. Another thing you should try to do is assigning change agent to the spectral index, in which the change moment is mostly visible. That should be helpful in the last part of this exercise, in which you will try to recognize the date of change and assign the change agent to it by yourself.
 
-
-TO DO:
-- load new vector file with several points for self-training
-- prepare modified code chunk
-- prepare questions and link to the correct answers
-- link to quiz question with image
-
-
+TO DO: - load new vector file with several points for self-training - prepare modified code chunk - prepare questions and link to the correct answers - link to quiz question with image
