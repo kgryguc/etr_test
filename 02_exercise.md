@@ -53,10 +53,10 @@ calculated using the higher NDVI value between two images.
 <!-- } -->
 <!-- ``` -->
 <!-- <figure> -->
+<p align="center">
 
 <img src="media_exercise/tatra_mountains_1984_2016.PNG" title="Tatra Mountains 1984-2016" alt="Point 1" width="1080"/>
 
-<p style="text-align: center;">
 Left: Landsat 5 TM 31.07.1984, RGB 321; right: Landsat 8 OLI 8.09.2016,
 RGB 432
 </p>
