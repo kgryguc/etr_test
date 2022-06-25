@@ -1,32 +1,54 @@
----
-title: "Change moments and agents in Tatra Mountains"
-description: "This is the exercise in Module 2 Theme 2."
-dateCreated: 2021-06-20
-authors: "Krzysztof Gryguc, Adrian Ochtyra, Adriana Marcinkowska-Ochtyra"
-contributors: 
-estimatedTime: "1 hour"
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## Exercise
 
 ### Change moments and agents in Tatra Mountains
 
+<div align="center">
 
-<div align="center">The derogatory term “scrub” means several different things. One definition is someone (especially a game player) who is not good at something (especially a game). By this definition, we all start out as scrubs, and there is certainly no shame in that. I mean the term differently, though. A scrub is a player who is handicapped by self-imposed rules that the game knows nothing about. A scrub does not play to win.</div>
+The derogatory term “scrub” means several different things. One
+definition is someone (especially a game player) who is not good at
+something (especially a game). By this definition, we all start out as
+scrubs, and there is certainly no shame in that. I mean the term
+differently, though. A scrub is a player who is handicapped by
+self-imposed rules that the game knows nothing about. A scrub does not
+play to win.
 
-<div align="left">The derogatory term “scrub” means several different things. One definition is someone (especially a game player) who is not good at something (especially a game). By this definition, we all start out as scrubs, and there is certainly no shame in that. I mean the term differently, though. A scrub is a player who is handicapped by self-imposed rules that the game knows nothing about. A scrub does not play to win.</div>
+</div>
 
-<div align="right">The derogatory term “scrub” means several different things. One definition is someone (especially a game player) who is not good at something (especially a game). By this definition, we all start out as scrubs, and there is certainly no shame in that. I mean the term differently, though. A scrub is a player who is handicapped by self-imposed rules that the game knows nothing about. A scrub does not play to win.</div>
+<div align="left">
 
+The derogatory term “scrub” means several different things. One
+definition is someone (especially a game player) who is not good at
+something (especially a game). By this definition, we all start out as
+scrubs, and there is certainly no shame in that. I mean the term
+differently, though. A scrub is a player who is handicapped by
+self-imposed rules that the game knows nothing about. A scrub does not
+play to win.
 
+</div>
 
-In this exercise you will be able to complete a few tasks: identifying **moments of changes** visible in the imagery as well as attributing **change agents** to detected moments based on trajectories of selected spectral indices.
+<div align="right">
 
-The main objective of this exercise is not only to show you some examples of changes and change agents, but also to provide you with the ability to prepare your own reference data sets for different purposes on the basis of photointerpretation of imagery chips and charts presenting relationships of spectral indices values and changes happening on the ground.
+The derogatory term “scrub” means several different things. One
+definition is someone (especially a game player) who is not good at
+something (especially a game). By this definition, we all start out as
+scrubs, and there is certainly no shame in that. I mean the term
+differently, though. A scrub is a player who is handicapped by
+self-imposed rules that the game knows nothing about. A scrub does not
+play to win.
+
+</div>
+
+In this exercise you will be able to complete a few tasks: identifying
+**moments of changes** visible in the imagery as well as attributing
+**change agents** to detected moments based on trajectories of selected
+spectral indices.
+
+The main objective of this exercise is not only to show you some
+examples of changes and change agents, but also to provide you with the
+ability to prepare your own reference data sets for different purposes
+on the basis of photointerpretation of imagery chips and charts
+presenting relationships of spectral indices values and changes
+happening on the ground.
 
 #### Prerequisites
 
@@ -34,7 +56,9 @@ For this exercise you will need the following software, data and tools:
 
 -   Software
 
-    -   R with RStudio (additional libraries required: raster, sf, dplyr). You can access environment setup tutorial for the whole Module 2 here: -insert link to environment setup tutorial-
+    -   R with RStudio (additional libraries required: raster, sf,
+        dplyr). You can access environment setup tutorial for the whole
+        Module 2 here: -insert link to environment setup tutorial-
 
 -   Data
 
@@ -42,36 +66,58 @@ For this exercise you will need the following software, data and tools:
 
 #### Data
 
-The imagery provided for this exercise consists of Landsat (generations 5, 7 and 8) satellite imagery time series for 1984-2016 period. Generated time series consisted of images from summer period, defined asthe period between June 15 and Septemper 15. Images for each available year (years 1990, 1998 and 2004 were omitted due to low quality data - high cloud cover being the main reason for omittment) have been subjected to atmospheric and topographic correction using ATCOR 2/3 software. The results of corrections were validated with surface reflectance measurements collected in-situ. Images have also been harmonized to Landsat 8 surface reflectance values by linear regression obtained from comparison of clear pixel values among TM-ETM+ and ETM+-OLI sensors.
+The imagery provided for this exercise consists of Landsat (generations
+5, 7 and 8) satellite imagery time series for 1984-2016 period.
+Generated time series consisted of images from summer period, defined
+asthe period between June 15 and Septemper 15. Images for each available
+year (years 1990, 1998 and 2004 were omitted due to low quality data -
+high cloud cover being the main reason for omittment) have been
+subjected to atmospheric and topographic correction using ATCOR 2/3
+software. The results of corrections were validated with surface
+reflectance measurements collected in-situ. Images have also been
+harmonized to Landsat 8 surface reflectance values by linear regression
+obtained from comparison of clear pixel values among TM-ETM+ and
+ETM+-OLI sensors.
 
-It should be noted that due to cloud cover in some periods, selected images (14/30) are composites of two different images. Composited were calculated using the higher NDVI value between two images.
+It should be noted that due to cloud cover in some periods, selected
+images (14/30) are composites of two different images. Composited were
+calculated using the higher NDVI value between two images.
 
 <!-- ```{css, echo=FALSE} -->
-
 <!-- figcaption { -->
 <!--   text-align: center; -->
 <!-- } -->
 <!-- ``` -->
-
 <figure>
 
 <img src="media_exercise/tatra_mountains_1984_2016.PNG" title="Tatra Mountains 1984-2016" alt="Point 1" width="1080"/>
 
-<figcaption class="figure-caption text-center"><b>Left: Landsat 5 TM 31.07.1984, RGB 321; right: Landsat 8 OLI 8.09.2016, RGB 432</b></figcaption> 
-
+<figcaption class="figure-caption text-center">
+<b>Left: Landsat 5 TM 31.07.1984, RGB 321; right: Landsat 8 OLI
+8.09.2016, RGB 432</b>
+</figcaption>
 </figure>
 
-Results of preprocessing were 30 6-band (corresponding to Landsat 5 bands 1-5 and 7) bricks, which in turn were used to calculate spectral indices. For this exercise, you will use 30-layer raster bricks of bands 4 (NIR), 3 (red) and 2 (green) for displaying the data and vector data with reference points. Points have assigned attributes regarding year of detected change, change agent and time series values of three spectral indices: NDVI, NDMI and NBR.
+Results of preprocessing were 30 6-band (corresponding to Landsat 5
+bands 1-5 and 7) bricks, which in turn were used to calculate spectral
+indices. For this exercise, you will use 30-layer raster bricks of bands
+4 (NIR), 3 (red) and 2 (green) for displaying the data and vector data
+with reference points. Points have assigned attributes regarding year of
+detected change, change agent and time series values of three spectral
+indices: NDVI, NDMI and NBR.
 
-More information about the data and processing can be found in [Ochtyra et. al 2020](https://doi.org/10.1016/j.rse.2020.112026).
+More information about the data and processing can be found in [Ochtyra
+et. al 2020](https://doi.org/10.1016/j.rse.2020.112026).
 
 #### Environment preparation
 
-To start with, we want to load neccessary libraries and data and set up some initial variables, which we will use further down the line.
+To start with, we want to load neccessary libraries and data and set up
+some initial variables, which we will use further down the line.
 
-Firstly, load required libraries into the environment: raster, sf, and dplyr.
+Firstly, load required libraries into the environment: raster, sf, and
+dplyr.
 
-```{r message = FALSE}
+``` r
 library(raster) # raster processing
 library(sf) # vector and attributes handling
 library(dplyr) # data manipulation
@@ -79,45 +125,61 @@ library(dplyr) # data manipulation
 
 #### Loading data
 
-Now we can load required data into RStudio environment. We will start with loading 3 raster bricks of bands green, red and NIR respectively.
+Now we can load required data into RStudio environment. We will start
+with loading 3 raster bricks of bands green, red and NIR respectively.
 
-```{r message = FALSE}
+``` r
 green <- brick("data_exercise/Landsat_green_ts.tif") # RasterBrick containing 30 green bands from 1984-2016 period
 red <- brick("data_exercise/Landsat_red_ts.tif") # RasterBrick containing 30 red bands from 1984-2016 period
 nir <- brick("data_exercise/Landsat_nir_ts.tif") # RasterBrick containing 30 NIR bands from 1984-2016 period
 ```
 
-The bands in the raster bricks are ordered by date: first raster is the earliest acquired image from 1984 and the last is the raster from 2016.
+The bands in the raster bricks are ordered by date: first raster is the
+earliest acquired image from 1984 and the last is the raster from 2016.
 
-We can visualize part of one of the bricks to see overall data extent and values of bands.
+We can visualize part of one of the bricks to see overall data extent
+and values of bands.
 
-```{r message = FALSE, eval = FALSE}
+``` r
 plot(nir, 1:6, col = gray.colors(n = 16, start = 0)) # visualisation of first 6 bands (1984-1989)
 ```
 
 <img src="media_exercise/brick_visualisation.png" title="Brick visualisation" alt="visualisation" width="1080"/>
 
-We can now also add vector of dates assigned to each image. As mentioned previously, some images are composites. For them the date assigned is the date of main image, from which most of the pixels were used in the final composite.
+We can now also add vector of dates assigned to each image. As mentioned
+previously, some images are composites. For them the date assigned is
+the date of main image, from which most of the pixels were used in the
+final composite.
 
-```{r message = FALSE}
+``` r
 years <- as.Date(c("1984-07-31","1985-08-03","1986-08-22", "1987-07-08", "1988-08-18", "1989-07-04", "1991-09-05", "1992-07-20", "1993-08-16", "1994-08-28", "1995-07-21", "1996-08-24", "1997-09-12", "1999-08-09", "2000-08-20", "2001-08-15", "2002-06-15", "2003-08-12", "2005-09-02", "2006-07-19", "2007-08-23", "2008-09-02", "2009-08-21", "2010-08-23", "2011-08-27", "2012-08-28", "2013-09-08","2014-09-04", "2015-07-12", "2016-08-08")) # vector of dates assigned to subsequent rasters in the data brick
 ```
 
-Now load reference points data into workspace. By using function for reading data from *sf* package we can easily read and manipulate data contained in the attribute table of vector file.
+Now load reference points data into workspace. By using function for
+reading data from *sf* package we can easily read and manipulate data
+contained in the attribute table of vector file.
 
-```{r message = FALSE, eval = FALSE}
+``` r
 points <- st_read("data_exercise/Tatra_Mountains_change_points.shp") # set of 9 reference points with attribute table
 ```
 
-There are 9 points into reference layer with attributes of year of change detection, change agent and 90 spectral indices values (30 for each of NDVI, NDMI and NBR).
+There are 9 points into reference layer with attributes of year of
+change detection, change agent and 90 spectral indices values (30 for
+each of NDVI, NDMI and NBR).
 
 #### Visualising imagery chips and spectral trajectories
 
-Now that we have all the required data we can prepare our plotting environment. Our goal is to overview so called image chips, which are parts of the images surrounding reference points. For now, we will use point number 1 as an example. In further part of the exercise we will create a loop to perform each step for all of the points.
+Now that we have all the required data we can prepare our plotting
+environment. Our goal is to overview so called image chips, which are
+parts of the images surrounding reference points. For now, we will use
+point number 1 as an example. In further part of the exercise we will
+create a loop to perform each step for all of the points.
 
-Now we will pick one of the points and based on the coordinates we will outline the range of the chip. We will use chips which are 39x39 pixels in area.
+Now we will pick one of the points and based on the coordinates we will
+outline the range of the chip. We will use chips which are 39x39 pixels
+in area.
 
-```{r message = FALSE, eval = FALSE}
+``` r
 point_number <- 1 # indicate the number of point as read into the environment
 
 point_cords <- st_coordinates(points)[point_number, ] # retrieve coordinates from point location
@@ -131,18 +193,25 @@ col_cords <- (col - half_widow_size) : (col + half_widow_size) # image columns, 
 row_cords <- (row - half_widow_size) : (row + half_widow_size) # image rows, which will we used for image chip visualisation
 ```
 
-We set up output name of the chips mosaic and initialize device, which can be explained as a new plotting area, which will be saved to our disk after we finish drawing. We want to display chips in 3 rows, 10 columns. For that we will set up layout.
+We set up output name of the chips mosaic and initialize device, which
+can be explained as a new plotting area, which will be saved to our disk
+after we finish drawing. We want to display chips in 3 rows, 10 columns.
+For that we will set up layout.
 
-```{r message = FALSE, eval = FALSE}
+``` r
 output_name <- "chips_example.png" # set up output name of the file
 png(filename = output_name, width = 1920, height = 1080, pointsize = 16) # initialize device, plotting area 1920x1080 px, size of plotted text 16 points
 
 layout(matrix(seq(1,30),3, 10, byrow = TRUE), heights = c(1,1,1)) # plotting area set up as a 3x10 matrix
 ```
 
-Now we can plot our chips. In the loop below we will use 3 raster bricks with NIR, red and green bands to create RGB NIR/RED/GREEN composites of outlined chips for selected point. To visualise each chips with similar parameters we will also trim histogram stretches to set values. For each chip we will also display date and location of selected point.
+Now we can plot our chips. In the loop below we will use 3 raster bricks
+with NIR, red and green bands to create RGB NIR/RED/GREEN composites of
+outlined chips for selected point. To visualise each chips with similar
+parameters we will also trim histogram stretches to set values. For each
+chip we will also display date and location of selected point.
 
-```{r message = FALSE, eval = FALSE}
+``` r
 for (j in seq(30)){ # loop 30 times - once for each raster in the brick
   
   o_b1 <- raster(matrix(getValuesBlock(green[[j]], 
@@ -191,11 +260,15 @@ This is the result of running the code above.
 
 <img src="media_exercise/chips_example.png" title="Point 1. Bark beetle outbreak" alt="Point 1 - chips" width="1080"/>
 
-As you can see we managed to plot the whole timeseries in one image, which allows for easier visual comparison of the images.
+As you can see we managed to plot the whole timeseries in one image,
+which allows for easier visual comparison of the images.
 
-Now we will plot values for 3 spectral indices. We need to prepare our plotting area in a different way to previous plot. Additionally we need to prepare numerical data. For each spectral index we extract 30 values from attribute table.
+Now we will plot values for 3 spectral indices. We need to prepare our
+plotting area in a different way to previous plot. Additionally we need
+to prepare numerical data. For each spectral index we extract 30 values
+from attribute table.
 
-```{r message = FALSE, eval = FALSE}
+``` r
 output_name = "trajectory_example.png" # set up output name of the file
 png(filename = output_name, width = 1920, height = 1080, pointsize = 16)
 
@@ -271,9 +344,13 @@ The result of the above chunk of code should look like this.
 
 <img src="media_exercise/trajectory_example.png" title="Point 1. Bark beetle outbreak" alt="Point 1 - spectral trajectories" width="1080"/>
 
-Now we can automate our processing by looping previous functions and merging two output images into one containing both chips and trajectories into one image. Most of the code will remain similar with a few modifications needed for the loop to work properly. Changed code line will be indicated by comments in the code chunk.
+Now we can automate our processing by looping previous functions and
+merging two output images into one containing both chips and
+trajectories into one image. Most of the code will remain similar with a
+few modifications needed for the loop to work properly. Changed code
+line will be indicated by comments in the code chunk.
 
-```{r message = FALSE, eval = FALSE}
+``` r
 window_size <- 39 # set up window size for all elements which will come out of the loop
 
 for (i in seq(nrow(points))){ # the loop will last till all of the points in the layer are used
@@ -401,13 +478,21 @@ for (i in seq(nrow(points))){ # the loop will last till all of the points in the
   dev.off()
   
 }
-
 ```
 
 All of the resulting images should be looking like the example below.
 
 <img src="media_exercise/all_elements_example.png" title="Point 1. Bark beetle outbreak" alt="Point 1 - all elements" width="1080"/>
 
-Now analyze the resulting 9 images. Focus on recognizing changes visible in the chips; try to find the year of change based on the visual interpretation and compare your guess to the date in the attribute table. Another thing you should try to do is assigning change agent to the spectral index, in which the change moment is mostly visible. That should be helpful in the last part of this exercise, in which you will try to recognize the date of change and assign the change agent to it by yourself.
+Now analyze the resulting 9 images. Focus on recognizing changes visible
+in the chips; try to find the year of change based on the visual
+interpretation and compare your guess to the date in the attribute
+table. Another thing you should try to do is assigning change agent to
+the spectral index, in which the change moment is mostly visible. That
+should be helpful in the last part of this exercise, in which you will
+try to recognize the date of change and assign the change agent to it by
+yourself.
 
-TO DO: - load new vector file with several points for self-training - prepare modified code chunk - prepare questions and link to the correct answers - link to quiz question with image
+TO DO: - load new vector file with several points for self-training -
+prepare modified code chunk - prepare questions and link to the correct
+answers - link to quiz question with image
