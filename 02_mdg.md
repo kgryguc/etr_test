@@ -1,7 +1,7 @@
 ## Prerequisites
 
-For working on this theme, you need: - basic R skills - R packages
--TODO: Module 2 R environment/project setup tutorial-
+For working on this theme, you need: \* basic R skills  
+\* R packages -TODO: Module 2 R environment/project setup tutorial-
 
 # Temporal information in satellite data
 
@@ -16,7 +16,8 @@ such data in Earth observation analysis.
 ## Objectives
 
 After reading through theoretical contents this theme you will learn how
-to:<br> - [indicate satellite sensors with high or low temporal
+to:  
+- [indicate satellite sensors with high or low temporal
 resolution](#resolution)<br> - [recognize the types of multitemporal
 analysis](#temporal-analysis)<br> - [list key aspects of satellite time
 series data analysis](#aspects)<br> - [divide satellite data into
