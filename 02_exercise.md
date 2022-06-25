@@ -47,15 +47,21 @@ It should be noted that due to cloud cover in some periods, selected
 images (14/30) are composites of two different images. Composited were
 calculated using the higher NDVI value between two images.
 
-<figure>
+<!-- ```{css, echo=FALSE} -->
+<!-- figcaption { -->
+<!--   text-align: center; -->
+<!-- } -->
+<!-- ``` -->
+<!-- <figure> -->
 
 <img src="media_exercise/tatra_mountains_1984_2016.PNG" title="Tatra Mountains 1984-2016" alt="Point 1" width="1080"/>
 
-<figcaption>
-<b>Left: Landsat 5 TM 31.07.1984, RGB 321; right: Landsat 8 OLI
-8.09.2016, RGB 432</b>
-</figcaption>
-</figure>
+<p style="text-align: center;">
+Left: Landsat 5 TM 31.07.1984, RGB 321; right: Landsat 8 OLI 8.09.2016,
+RGB 432
+</p>
+<!--   <figcaption><b>Left: Landsat 5 TM 31.07.1984, RGB 321; right: Landsat 8 OLI 8.09.2016, RGB 432</b></figcaption> -->
+<!-- </figure> -->
 
 Results of preprocessing were 30 6-band (corresponding to Landsat 5
 bands 1-5 and 7) bricks, which in turn were used to calculate spectral
