@@ -25,13 +25,13 @@ analysis](#types-of-temporal-analysis)
 - [list key aspects of satellite time series data
 analysis](#aspects-of-satellite-time-series-data-analysis)  
 - [define different types of changes on satellite
-data](#types-of-changes-on-satellite%20data)  
+data](#types-of-changes-on-satellite-data)  
 - [divide satellite data into categories depending on temporal
-resolution](#monitoring-of-changes-spectral-trajectory-in-time-series)  
+resolution](#monitoring-of-changes---spectral-trajectory-in-time-series)  
 - [address uncertainty in the
 results](#uncertainty-of-change-analysis)  
 - [differentiate several change detection
-algorithms](#methods-tools-and-algorithms)
+algorithms](#methods---tools-and-algorithms)
 
 After performing the
 [Exercise](#exercise-change-moments-and-agents-in-tatra-mountains) in
@@ -65,6 +65,8 @@ presented in **Figure 1** below.
 <img src="media/fig1_temporal_resolution.png" title="Temporal resolution and lifetime of selected satellite missions" alt="Figure 1" width="650"/>
 
 <img src="media/fig1_temporal_resolution.png" title="Temporal resolution and lifetime of selected satellite missions" alt="Figure 1" width="700"/>
+
+<img src="media/fig1_temporal_resolution.png" title="Temporal resolution and lifetime of selected satellite missions" alt="Figure 1" width="1080"/>
 
 <div align="center">
 
@@ -103,7 +105,7 @@ accuracy relative to single term results (**Figure 3B**).
 <div align="center">
 
 <b>Figure 3. Time series data based classification (based on [Gómez et
-al. 2016](#https://doi.org/10.1016/j.isprsjprs.2016.03.008),
+al. 2016](https://doi.org/10.1016/j.isprsjprs.2016.03.008),
 modified).</b>
 
 </div>
@@ -116,7 +118,7 @@ vegetation etc or on post-classification image. The result is a map of
 changes showing their direction or magnitude. One important aspect of
 temporal analysis is related to the category of time series of satellite
 data that can be considered **online / offline** ([Zhu,
-2017](#https://doi.org/10.1016/j.isprsjprs.2017.06.013)). The first one
+2017](https://doi.org/10.1016/j.isprsjprs.2017.06.013)). The first one
 assumes the time series data are coming in at a certain rate - analyses
 are provided in near real-time or continuously, and the second one
 assumes that the time series data already exist. In both multitemporal
@@ -127,7 +129,7 @@ analyses. As it can be seen in Figure 1 the Landsat plays an important
 role here, as it is the longest time series of civilian optical
 satellite data. After opening the archives in 2008 all new and archived
 images have been made freely available over the internet to any user
-([Wulder et al. 2012](#https://doi.org/10.1016/j.rse.2012.01.010)).
+([Wulder et al. 2012](https://doi.org/10.1016/j.rse.2012.01.010)).
 
 ### Aspects of satellite time series data analysis
 
@@ -142,13 +144,14 @@ detection, composite/fusion, metrics calculation etc. (see [Theme
 3]((../03_image_processing/03_image_processing.md))),  
 - methods - the algorithms useful for multitemporal classification or
 change detection (see the [appropriate section in this
-Theme](#methods)),  
+Theme](#methods---tools-and-algorithms)),  
 - applications - wide range of use of time series for environmental
 analyses (the examples in [Theme
 4](../04_multitemporal_classification/04_multitemporal_classification.md),
 [Theme 5](../05_vegetation_monitoring/05_vegetation_monitoring.md) and
-Case studies
-[1](#(../06_cs_tundra_grasslands/06_cs_tundra_grasslands.md),%20%5B2%5D(#/..07_cs_vegetation_dynamics/07_cs_vegetation_dynamics.md)%20and%20%5B3%5D(#/..08_cs_disturbance_detection/08_cs_disturbance_detection.md)).
+Case studies [1](../06_cs_tundra_grasslands/06_cs_tundra_grasslands.md),
+[2](../07_cs_vegetation_dynamics/07_cs_vegetation_dynamics.md) and
+[3](../08_cs_disturbance_detection/08_cs_disturbance_detection.md)).
 
 ### Temporal categories of time series data
 
@@ -177,19 +180,25 @@ mentioned above. As such, temporal-scale changes can be **abrupt** and
 **gradual** (**Figure 4**), where the first one refers to short-term,
 large magnitude, and the second one refers to long-term, small magnitude
 date-to-date changes ([Zhu,
-2017](#https://doi.org/10.1016/j.isprsjprs.2017.06.013)). Abrupt changes
+2017](https://doi.org/10.1016/j.isprsjprs.2017.06.013)). Abrupt changes
 can be caused by disturbance agents such as fires, floods or
 deforestation. Gradual changes can be caused by climate changes or land
 management.
 
 <img src="media/fig4_example_trends.png" title="Example trends for two Landsat data series with abrupt (black dots) and gradual (red squares) changes occurrence. The trends show long-term changes in the vegetation index values (Ochtyra et al., 2020)." alt="Figure 4" width="1080"/>
 
+<img src="media/fig4_example_trends.png" title="Example trends for two Landsat data series with abrupt (black dots) and gradual (red squares) changes occurrence. The trends show long-term changes in the vegetation index values (Ochtyra et al., 2020)." alt="Figure 4" width="540"/>
+
+<img src="media/fig4_example_trends.png" title="Example trends for two Landsat data series with abrupt (black dots) and gradual (red squares) changes occurrence. The trends show long-term changes in the vegetation index values (Ochtyra et al., 2020)." alt="Figure 4" width="600"/>
+
+<img src="media/fig4_example_trends.png" title="Example trends for two Landsat data series with abrupt (black dots) and gradual (red squares) changes occurrence. The trends show long-term changes in the vegetation index values (Ochtyra et al., 2020)." alt="Figure 4" width="750"/>
+
 <div align="center">
 
 <b>Figure 4. Example trends for two Landsat data series with abrupt
 (black dots) and gradual (red squares) changes occurrence. The trends
 show long-term changes in the vegetation index values ([Ochtyra et al.,
-2020](#https://doi.org/10.1016/j.rse.2020.112026)).</b>
+2020](https://doi.org/10.1016/j.rse.2020.112026)).</b>
 
 </div>
 
@@ -198,7 +207,7 @@ show long-term changes in the vegetation index values ([Ochtyra et al.,
 There are also **seasonal** changes, driven by annual temperature and
 rainfall interactions impacting plant phenology or proportional cover of
 land cover types with different phenology of vegetation ([Verbesselt et
-al. 2010](#https://doi.org/10.1016/j.rse.2009.08.014)). In this kind of
+al. 2010](https://doi.org/10.1016/j.rse.2009.08.014)). In this kind of
 analyses the changes between images can be considered as detected
 seasonal metric/parameter connected to the vegetation behaviour in a
 given time, e.g. start, peak or end of the growing season (**Figure
@@ -212,7 +221,7 @@ given time, e.g. start, peak or end of the growing season (**Figure
 season, (c) length of season, (d) base value, (e) time of middle of
 season, (f) maximum value, (g) amplitude, (h) small integrated value,
 (h+i) large integrated value ([Jönsson, Eklundh,
-2004](#https://doi.org/10.1016/j.cageo.2004.05.00)). The red and blue
+2004](https://doi.org/10.1016/j.cageo.2004.05.00)). The red and blue
 lines are filtered and original data, respectively. </b>
 
 </div>
@@ -261,7 +270,7 @@ over spatial-temporal domains.
 <b>Figure 6. NDVI trends derived from different sensors: Sentinel-2,
 Landsat 8 and MODIS (please note that the study area is located in the
 southern hemisphere, [Kavats et
-al. 2020](#https://doi.org/10.3390/rs12244080)).</b>
+al. 2020](https://doi.org/10.3390/rs12244080)).</b>
 
 </div>
 
@@ -295,7 +304,7 @@ classification probability in **Figure 7**). Uncertainty of change
 analysis describes **magnitude of errors**, their **spatial patterns**
 and can help the end user to better understand **strengths and
 limitations** of the data ([Povey, Grainger
-2015](#https://doi.org/10.5194/amt-8-4699-2015)).
+2015](https://doi.org/10.5194/amt-8-4699-2015)).
 
 <img src="media/fig7_probability_classification.gif" title="Probability of pixels being correctly classified on multitemporal images (Koukoulas 2010, modified)." alt="Figure 7" width="1080"/>
 
@@ -303,7 +312,7 @@ limitations** of the data ([Povey, Grainger
 
 <b>Figure 7. Probability of pixels being correctly classified on
 multitemporal images ([Koukoulas
-2010](#http://www.tric.u-tokai.ac.jp/ISPRScom8/TC8/TC8_CD/headline/TS-11/W08L23_20100308050524.pdf),
+2010](http://www.tric.u-tokai.ac.jp/ISPRScom8/TC8/TC8_CD/headline/TS-11/W08L23_20100308050524.pdf),
 modified).</b>
 
 </div>
@@ -313,16 +322,16 @@ data assessment** in terms of factors that could potentially influence
 results of change detection analysis. These factors may include sun and
 atmospheric effects on imagery, terrain topography and stage of the
 phenological cycle ([Song, Woodcock
-2003](#https://doi.org/10.1109/tgrs.2003.818367)). Furthermore, errors
+2003](https://doi.org/10.1109/tgrs.2003.818367)). Furthermore, errors
 and omissions on the processing stage (such as different types of
 corrections, transformations, harmonisations) can also affect the degree
 of accuracy in detecting changes, their causes and therefore the final
 appearance of the post-processing image. Finally, attributing any given
 pixel with ‘Change’ or ‘No Change’ label is usually preceded by
 e.g. thresholding or trajectory classification (see the [next
-section](#methods)). Such methods, however, are limited by their lack of
-robustness over different research areas and obliviousness to rate and
-severity of changes.
+section](#methods---tools-and-algorithms)). Such methods, however, are
+limited by their lack of robustness over different research areas and
+obliviousness to rate and severity of changes.
 
 Post-results analysis of change detection algorithms should be preceded
 by thorough **accuracy and error assessment** of the change image. Most
@@ -336,12 +345,12 @@ in error distribution**, the results can either be modified by for
 example inclusion of samples from areas with higher error rates or, in
 case the former step is not possible or unsuccessful, attaching
 confidence interval or standard error to the result ([Koukoulas
-2010](#http://www.tric.u-tokai.ac.jp/ISPRScom8/TC8/TC8_CD/headline/TS-11/W08L23_20100308050524.pdf)).
+2010](http://www.tric.u-tokai.ac.jp/ISPRScom8/TC8/TC8_CD/headline/TS-11/W08L23_20100308050524.pdf)).
 In sample-based accuracy assessment such measures are in fact
 representing the level of uncertainty. Research shows that
 error-adjusted estimates may differ significantly from raw accuracy
 measures ([Olofsson et
-al. 2013](#https://doi.org/10.1016/j.rse.2012.10.031)). The inclusion of
+al. 2013](https://doi.org/10.1016/j.rse.2012.10.031)). The inclusion of
 a confidence interval allows the uncertainty to be quantified. Taking
 the steps above should allow the end user of the classification to make
 more informed decisions about further use of the results.
@@ -355,12 +364,11 @@ necessary to **characterise the quality of data** and **indicate the
 moment and change agent** on the multitemporal dataset in the analysed
 area. In Module 1, you have already learned about the **GEE Time Series
 Explorer** plugin, with which you can explore satellite data time
-series. [Cohen et
-al. (2010)](#https://doi.org/10.1016/j.rse.2010.07.010) introduced
-[TimeSync](#https://timesync.forestry.oregonstate.edu/) - a Landsat time
-series visualisation tool that can be used to collect the data and
-derive plot-based estimates of change (Figure 8). You will learn a
-similar solution in the
+series. [Cohen et al. (2010)](https://doi.org/10.1016/j.rse.2010.07.010)
+introduced [TimeSync](https://timesync.forestry.oregonstate.edu/) - a
+Landsat time series visualisation tool that can be used to collect the
+data and derive plot-based estimates of change (Figure 8). You will
+learn a similar solution in the
 [Exercise](#exercise-change-moments-and-agents-in-tatra-mountains) at
 the end of this Theme, which will be very useful for validation of the
 results obtained using any change detection algorithm.
@@ -370,7 +378,7 @@ results obtained using any change detection algorithm.
 <div align="center">
 
 <b>Figure 8. Landsat image chips (1985-2007) displayed in
-[TimeSync](#https://timesync.forestry.oregonstate.edu/) tool (A) and
+[TimeSync](https://timesync.forestry.oregonstate.edu/) tool (A) and
 corresponding trajectory window with Tasseled Cap Wetness index values
 (B).</b>
 
@@ -385,7 +393,7 @@ proposed by the authors.
 
 From a mathematical point of view the change can be extracted via six
 approaches ([Zhu,
-2017](#https://doi.org/10.1016/j.isprsjprs.2017.06.013)):  
+2017](https://doi.org/10.1016/j.isprsjprs.2017.06.013)):  
 - **thresholding** - indicating significant deviation from the
 predefined threshold,  
 - **differencing** - indicating large differences in comparing images
@@ -417,24 +425,24 @@ data.</b>
 
 </div>
 
-| Algorithm                                                                  |        Change type        |                                              Reference                                              |
-|:---------------------------------------------------------------------------|:-------------------------:|:---------------------------------------------------------------------------------------------------:|
-| Breaks For Additive Seasonal and Trend (BFAST)                             | abrupt, gradual, seasonal |                [Verbesselt et al., 2010](#https://doi.org/10.1016/j.rse.2009.08.014)                |
-| Continuous Change Detection and Classification (CCDC)                      | abrupt, gradual, seasonal |                  [Zhu, Woodcock, 2014](#https://doi.org/10.1016/j.rse.2014.01.011)                  |
-| COntinuous monitoring of Land Disturbance (COLD)                           |      abrupt, gradual      |                   [Zhu et al., 2020](#https://doi.org/10.1016/j.rse.2019.03.009)                    |
-| Detecting Breakpoints and Estimating Segments in Trend (DBEST)             | abrupt, gradual, seasonal |                  [Jamali et al., 2015](#https://doi.org/10.1016/j.rse.2014.09.010)                  |
-| Exponentially Weighted Moving Average Change Detection (EWMACD)            |          abrupt           |       [Brooks et al., 2014](#https://ui.adsabs.harvard.edu/abs/2014AGUFM.B51L..01B/abstract)        |
-| Harmonic Analyses of NDVI Time-Series (HANTS)                              |         seasonal          |                   [Zhou et al., 2015](#https://doi.org/10.1016/j.rse.2015.03.018)                   |
-| Jumps Upon Spectrum and Trend (JUST)                                       | abrupt, gradual, seasonal |                [Ghaderpour, Vujadinovic, 2020](#https://doi.org/10.3390/rs12234001)                 |
-| Landsat-based detection of Trends in Disturbance and Recovery (LandTrendr) |      abrupt, gradual      |                 [Kennedy et al., 2010](#https://doi.org/10.1016/j.rse.2010.07.008)                  |
-| Phenological parameters estimation tool (PPET)                             |         seasonal          | [McKellip et al., 2010](#https://ntrs.nasa.gov/api/citations/20100033570/downloads/20100033570.pdf) |
-| Seasonal trend decomposition Loess (STL)                                   |         seasonal          |      [Cleveland et al., 1990](#http://www.nniiem.ru/file/news/2016/stl-statistical-model.pdf)       |
-| Sub-annual change detection algorithm (SCD)                                |          abrupt           |                        [Cai, Liu, 2015](#https://doi.org/10.3390/rs70708705)                        |
-| Threshold- and trend-based vegetation change monitoring algorithm (TVCMA)  |      abrupt, gradual      |                 [Ochtyra et al., 2020](#https://doi.org/10.1016/j.rse.2020.112026)                  |
-| TimeStats                                                                  |         seasonal          |                   [Udelhoven, 2011](#https://doi.org/10.1109/jstars.2010.2051942)                   |
-| Time-Series Classification approach based on Change Detection (TSCCD)      |      abrupt, gradual      |                 [Yan et al. 2019](#https://doi.org/10.1016/j.isprsjprs.2019.10.003)                 |
-| Vegetation Change Tracker (VCT)                                            |          abrupt           |                  [Huang et al., 2010](#https://doi.org/10.1016/j.rse.2009.08.017)                   |
-| Vegetation Regeneration and Disturbance Estimates Through Time (VeRDET)    |      abrupt, gradual      |                      [Hughes et al., 2017](#https://doi.org/10.3390/f8050166)                       |
+| Algorithm                                                                  |        Change type        |                                             Reference                                              |
+|:---------------------------------------------------------------------------|:-------------------------:|:--------------------------------------------------------------------------------------------------:|
+| Breaks For Additive Seasonal and Trend (BFAST)                             | abrupt, gradual, seasonal |                [Verbesselt et al., 2010](https://doi.org/10.1016/j.rse.2009.08.014)                |
+| Continuous Change Detection and Classification (CCDC)                      | abrupt, gradual, seasonal |                  [Zhu, Woodcock, 2014](https://doi.org/10.1016/j.rse.2014.01.011)                  |
+| COntinuous monitoring of Land Disturbance (COLD)                           |      abrupt, gradual      |                   [Zhu et al., 2020](https://doi.org/10.1016/j.rse.2019.03.009)                    |
+| Detecting Breakpoints and Estimating Segments in Trend (DBEST)             | abrupt, gradual, seasonal |                  [Jamali et al., 2015](https://doi.org/10.1016/j.rse.2014.09.010)                  |
+| Exponentially Weighted Moving Average Change Detection (EWMACD)            |          abrupt           |       [Brooks et al., 2014](https://ui.adsabs.harvard.edu/abs/2014AGUFM.B51L..01B/abstract)        |
+| Harmonic Analyses of NDVI Time-Series (HANTS)                              |         seasonal          |                   [Zhou et al., 2015](https://doi.org/10.1016/j.rse.2015.03.018)                   |
+| Jumps Upon Spectrum and Trend (JUST)                                       | abrupt, gradual, seasonal |                [Ghaderpour, Vujadinovic, 2020](https://doi.org/10.3390/rs12234001)                 |
+| Landsat-based detection of Trends in Disturbance and Recovery (LandTrendr) |      abrupt, gradual      |                 [Kennedy et al., 2010](https://doi.org/10.1016/j.rse.2010.07.008)                  |
+| Phenological parameters estimation tool (PPET)                             |         seasonal          | [McKellip et al., 2010](https://ntrs.nasa.gov/api/citations/20100033570/downloads/20100033570.pdf) |
+| Seasonal trend decomposition Loess (STL)                                   |         seasonal          |      [Cleveland et al., 1990](http://www.nniiem.ru/file/news/2016/stl-statistical-model.pdf)       |
+| Sub-annual change detection algorithm (SCD)                                |          abrupt           |                        [Cai, Liu, 2015](https://doi.org/10.3390/rs70708705)                        |
+| Threshold- and trend-based vegetation change monitoring algorithm (TVCMA)  |      abrupt, gradual      |                 [Ochtyra et al., 2020](https://doi.org/10.1016/j.rse.2020.112026)                  |
+| TimeStats                                                                  |         seasonal          |                   [Udelhoven, 2011](https://doi.org/10.1109/jstars.2010.2051942)                   |
+| Time-Series Classification approach based on Change Detection (TSCCD)      |      abrupt, gradual      |                 [Yan et al. 2019](https://doi.org/10.1016/j.isprsjprs.2019.10.003)                 |
+| Vegetation Change Tracker (VCT)                                            |          abrupt           |                  [Huang et al., 2010](https://doi.org/10.1016/j.rse.2009.08.017)                   |
+| Vegetation Regeneration and Disturbance Estimates Through Time (VeRDET)    |      abrupt, gradual      |                      [Hughes et al., 2017](https://doi.org/10.3390/f8050166)                       |
 
 Most of the algorithms are able to detect abrupt changes, some of them
 can also be used for gradual changes detection, however, the authors
@@ -446,7 +454,7 @@ types of changes. The algorithms can be used as independent tools
 implemented in the R, IDL, MATLAB, Python or Google Earth Engine
 environment. There are also special programs dedicated to multitemporal
 analyses that use the aforementioned algorithms, such as STL in [TIMESAT
-software](#https://web.nateko.lu.se/timesat/timesat.asp).
+software](https://web.nateko.lu.se/timesat/timesat.asp).
 
 ## Exercise - change moments and agents in Tatra Mountains
 
@@ -562,9 +570,10 @@ the final composite.
 
 ``` r
 years <- as.Date(c("1984-07-31","1985-08-03","1986-08-22", "1987-07-08", "1988-08-18", "1989-07-04", "1991-09-05", "1992-07-20", 
-"1993-08-16", "1994-08-28", "1995-07-21", "1996-08-24", "1997-09-12", "1999-08-09", "2000-08-20", "2001-08-15", 
-"2002-06-15", "2003-08-12", "2005-09-02", "2006-07-19", "2007-08-23", "2008-09-02", "2009-08-21", "2010-08-23", 
-"2011-08-27", "2012-08-28", "2013-09-08","2014-09-04", "2015-07-12", "2016-08-08")) # vector of dates assigned to subsequent rasters in the data brick
+"1993-08-16", "1994-08-28", "1995-07-21", "1996-08-24", "1997-09-12", "1999-08-09", "2000-08-20", "2001-08-15", "2002-06-15", 
+"2003-08-12", "2005-09-02", "2006-07-19", "2007-08-23", "2008-09-02", "2009-08-21", "2010-08-23", "2011-08-27", 
+"2012-08-28", "2013-09-08","2014-09-04", "2015-07-12", "2016-08-08")) # vector of dates assigned to subsequent rasters
+                                                                      # in the data brick
 ```
 
 Now load reference points data into the workspace. By using function for
@@ -699,7 +708,8 @@ output_name = "trajectory_example.png" # set up output name of the file
 png(filename = output_name, width = 1920, height = 1080, pointsize = 16)
 
 layout(matrix(seq(1, 4), 4, 1, byrow = TRUE), 
-heights = c(0.25, 1.25, 1.25, 1.25)) # plotting area set up as a 4x1 matrix, which will present as 3 long spanning over the whole plotting area
+heights = c(0.25, 1.25, 1.25, 1.25)) # plotting area set up as a 4x1 matrix, 
+                                     # which will present as 3 long spanning over the whole plotting area
 
 par(mar = c(0, 0, 0, 0)) # the first element of the plot - title; we begin by setting margins of part of the plot 
 plot.new() # new element in the plot, in this case title
@@ -794,7 +804,8 @@ for (i in seq(nrow(points))){ # the loop will last till all of the points in the
   col_cords <- (col - half_widow_size) : (col + half_widow_size)
   row_cords <- (row - half_widow_size) : (row + half_widow_size)
   
-  output_name <- paste0("Point ", i, ". ", points$chng_agent[i], ".png") # name of the file will contain information about point number and change agent
+  output_name <- paste0("Point ", i, ". ", points$chng_agent[i], ".png") # name of the file will contain information about point 
+                                                                         # number and change agent
   
   png(filename = output_name, width = 1920, height = 1080, pointsize = 16)
   
@@ -934,7 +945,7 @@ Brooks, E., Wynne, R. H., Thomas, V. A., Blinn, C. E., & Coulston, J.
 (2014). Exponentially Weighted Moving Average Change Detection Around
 the Country (and the World). In AGU Fall Meeting Abstracts (Vol. 2014,
 pp. B51L-01).
-[SOURCE](#https://ui.adsabs.harvard.edu/abs/2014AGUFM.B51L..01B/abstract)
+[SOURCE](https://ui.adsabs.harvard.edu/abs/2014AGUFM.B51L..01B/abstract)
 
 Cai, S., & Liu, D. (2015). Detecting change dates from dense satellite
 time series using a sub-annual change detection algorithm. Remote
@@ -943,7 +954,7 @@ Sensing, 7(7), 8705-8727. <https://doi.org/10.3390/rs70708705>
 Cleveland, R. B., Cleveland, W. S., McRae, J. E., & Terpenning, I.
 (1990). STL: A seasonal-trend decomposition. Journal of Official
 Statistics, 6(1), 3-73.
-[SOURCE](#http://www.nniiem.ru/file/news/2016/stl-statistical-model.pdf)
+[SOURCE](http://www.nniiem.ru/file/news/2016/stl-statistical-model.pdf)
 
 Cohen, W. B., Yang, Z., & Kennedy, R. (2010). Detecting trends in forest
 disturbance and recovery using yearly Landsat time series: 2.
@@ -993,12 +1004,12 @@ Koukoulas, S. (2010). Change detection under uncertainty: Modeling the
 spatial variation of errors. International Archives of the
 Photogrammetry, Remote Sensing and Spatial Information Science, Volume
 XXXVIII, Part 8, Kyoto Japan
-[SOURCE](#http://www.tric.u-tokai.ac.jp/ISPRScom8/TC8/TC8_CD/headline/TS-11/W08L23_20100308050524.pdf)
+[SOURCE](http://www.tric.u-tokai.ac.jp/ISPRScom8/TC8/TC8_CD/headline/TS-11/W08L23_20100308050524.pdf)
 
 McKellip, R.D., Ross, K.W., Spruce, J.P., Smoot, J.C., Ryan, R.E.,
 Gasser, G.E., Prados, D.L., Vaughan, R.D., 2010. Phenological Parameters
 Estimation Tool. NASA Tech. Briefs, New York.
-[SOURCE](#https://ntrs.nasa.gov/api/citations/20100033570/downloads/20100033570.pdf)
+[SOURCE](https://ntrs.nasa.gov/api/citations/20100033570/downloads/20100033570.pdf)
 
 Ochtyra, A., Marcinkowska-Ochtyra, A., & Raczko, E. (2020).
 Threshold-and trend-based vegetation change monitoring algorithm based
@@ -1074,10 +1085,12 @@ Landsat time series. Remote Sensing of Environment, 238, 111116.
 
 Match the temporal resolution with the satellite sensor:
 
-1\. 16 days \| A. Advanced Very High Resolution Radiometer \|  
-2. 26 days \| B. MultiSpectral Instrument \|  
-3. 5 days \| C. Enhanced Thematic Mapper+ \|  
-4. \<1 day \| D. New AstroSat Optical Modular Instrument \|
+|             |                                             |
+|-------------|---------------------------------------------|
+| 1\. 16 days | A. Advanced Very High Resolution Radiometer |
+| 2\. 26 days | B. MultiSpectral Instrument                 |
+| 3\. 5 days  | C. Enhanced Thematic Mapper+                |
+| 4\. \<1 day | D. New AstroSat Optical Modular Instrument  |
 
 **Question 2.**
 
@@ -1095,10 +1108,11 @@ satellite time series data classification?
 
 Match the best data with the application:
 
-1\. intra-annuall (year-to-year) \| A. hurricane effect \|  
-2. inter-annual (multi-year) \| B. phenological stage of grasslands
-development \|  
-3. inter-annual (year-to-year) \| C. bark beetle outbreak \|
+|                                  |                                                 |
+|----------------------------------|-------------------------------------------------|
+| 1\. intra-annuall (year-to-year) | A. hurricane effect                             |
+| 2\. inter-annual (multi-year)    | B. phenological stage of grasslands development |
+| 3\. inter-annual (year-to-year)  | C. bark beetle outbreak                         |
 
 **Question 4.**
 
