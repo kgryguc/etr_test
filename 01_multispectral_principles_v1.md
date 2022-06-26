@@ -22,7 +22,7 @@ sensors and to calculate selected vegetation indices.
 
 ## Spectral ranges in optical domain
 
-<span style="color:red">**(bridge with Module 1 - content to be
+<span style="color:red;">**(bridge with Module 1 - content to be
 agreed)**</span>
 
 ## Use of different ranges
@@ -38,7 +38,7 @@ agreed)**</span>
 -   MODIS, Landsat, Sentinel, PlanetScope, RapidEye…  
 -   RGB composites, visualisation
 
-<div align="center">
+<div>
 
 <b>Table 1. Selected satellite sensor characteristics.</b>
 
@@ -81,7 +81,7 @@ obtained from the satellite platforms, but since this Module deals with
 multispectral satellite data, the information in the table applies to
 them.
 
-<div align="center">
+<div>
 
 <b>Table 2. Advantages and limitations of satellite multispectral
 imaging.</b>
@@ -133,9 +133,11 @@ chose to present archives not related to just one area or missions,
 albeit those services can be useful for a specific purpose. Short list
 of such platforms can be found below.
 
-<div align="center">
+<div>
 
-<b>Table 3. Selected satellite data platforms.</b>\</div
+<b>Table 3. Selected satellite data platforms.</b>
+
+</div>
 
 ## Exercise
 
