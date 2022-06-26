@@ -99,7 +99,7 @@ accuracy relative to single term results (**Figure 3B**).
 <div>
 
 <b>Figure 3. Time series data based classification (based on [Gómez et
-al. 2016](https://doi.org/10.1016/j.isprsjprs.2016.03.008),
+al., 2016](https://doi.org/10.1016/j.isprsjprs.2016.03.008),
 modified).</b>
 
 </div>
