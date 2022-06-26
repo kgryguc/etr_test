@@ -79,7 +79,9 @@ address the examples of such analyses in [Theme
 and [Theme 5](../05_vegetation_monitoring/05_vegetation_monitoring.md)
 of this Module, respectively.
 
+<p align="center">
 <img src="media/fig2_temporal_analysis.png" title="Temporal analysis on satellite time series data" alt="Figure 2" width="540"/>
+</p>
 
 <div>
 
