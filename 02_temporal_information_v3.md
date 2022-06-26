@@ -60,9 +60,11 @@ case of Sentinel-2.
 Overview of temporal resolution of selected satellite sensors is
 presented in **Figure 1** below.
 
+<p align="center">
 <img src="media/fig1_temporal_resolution.png" title="Temporal resolution and lifetime of selected satellite missions" alt="Figure 1" width="1080"/>
+</p>
 
-<div>
+<div align="center">
 
 <b>Figure 1. Temporal resolution and lifetime of selected satellite
 missions.</b>
@@ -83,7 +85,7 @@ of this Module, respectively.
 <img src="media/fig2_temporal_analysis.png" title="Temporal analysis on satellite time series data" alt="Figure 2" width="540"/>
 </p>
 
-<div>
+<div align="center">
 
 <b>Figure 2. Temporal analysis on satellite time series data.</b>
 
@@ -96,9 +98,11 @@ information from the time series (**Figure 3A**). The use of
 multitemporal dataset into one land cover model is to improve the
 accuracy relative to single term results (**Figure 3B**).
 
+<p align="center">
 <img src="media/fig3_time_series.png" title="Time series data based classification (based on Gómez et al. 2016, modified)." alt="Figure 3" width="540"/>
+</p>
 
-<div>
+<div align="center">
 
 <b>Figure 3. Time series data based classification (based on [Gómez et
 al., 2016](https://doi.org/10.1016/j.isprsjprs.2016.03.008),
@@ -181,9 +185,11 @@ can be caused by disturbance agents such as fires, floods or
 deforestation. Gradual changes can be caused by climate changes or land
 management.
 
+<p align="center">
 <img src="media/fig4_example_trends.png" title="Example trends for two Landsat data series with abrupt (black dots) and gradual (red squares) changes occurrence. The trends show long-term changes in the vegetation index values (Ochtyra et al., 2020)." alt="Figure 4" width="600"/>
+</p>
 
-<div>
+<div align="center">
 
 <b>Figure 4. Example trends for two Landsat data series with abrupt
 (black dots) and gradual (red squares) changes occurrence. The trends
@@ -203,9 +209,11 @@ seasonal metric/parameter connected to the vegetation behaviour in a
 given time, e.g. start, peak or end of the growing season (**Figure
 5**).
 
+<p align="center">
 <img src="media/fig5_seasonality_parameters.png" title="Seasonality parameters: (a) beginning of season, (b) end of season, (c) length of season, (d) base value, (e) time of middle of season, (f) maximum value, (g) amplitude, (h) small integrated value, (h+i) large integrated value (Jönsson, Eklundh, 2004). The red and blue lines are filtered and original data, respectively." alt="Figure 5" width="540"/>
+</p>
 
-<div>
+<div align="center">
 
 <b>Figure 5. Seasonality parameters: (a) beginning of season, (b) end of
 season, (c) length of season, (d) base value, (e) time of middle of
@@ -253,9 +261,11 @@ Landsat with MODIS etc.). A better understanding of the separate and
 combined capabilities of two sensors can help in improving the obtained
 results over spatial-temporal domains.
 
+<p align="center">
 <img src="media/fig6_ndvi_trends.png" title="NDVI trends derived from different sensors: Sentinel-2, Landsat 8 and MODIS (please note that the study area is located in the southern hemisphere, Kavats et al., 2020)." alt="Figure 6" width="1080"/>
+</p>
 
-<div>
+<div align="center">
 
 <b>Figure 6. NDVI trends derived from different sensors: Sentinel-2,
 Landsat 8 and MODIS (please note that the study area is located in the
@@ -296,9 +306,11 @@ and can help the end user to better understand **strengths and
 limitations** of the data ([Povey, Grainger,
 2015](https://doi.org/10.5194/amt-8-4699-2015)).
 
+<p align="center">
 <img src="media/fig7_probability_classification.gif" title="Probability of pixels being correctly classified on multitemporal images (Koukoulas, 2010, modified)." alt="Figure 7" width="600"/>
+</p>
 
-<div>
+<div align="center">
 
 <b>Figure 7. Probability of pixels being correctly classified on
 multitemporal images ([Koukoulas,
@@ -363,9 +375,11 @@ learn a similar solution in the
 the end of this Theme, which will be very useful for validation of the
 results obtained using any change detection algorithm.
 
+<p align="center">
 <img src="media/fig8_image_chips.png" title="Landsat image chips (1985-2007) displayed in TimeSync tool (A) and corresponding trajectory window with Tasseled Cap Wetness index values (B)." alt="Figure 8" width="1080"/>
+</p>
 
-<div>
+<div align="center">
 
 <b>Figure 8. Landsat image chips (1985-2007) displayed in
 [TimeSync](https://timesync.forestry.oregonstate.edu/) tool (A) and
@@ -408,7 +422,7 @@ specific issue** e.g. forest disturbances (see [Theme
 with the information about change type possible to detect on satellite
 time series data.
 
-<div>
+<div align="center">
 
 <b>Table 1. Selected algorithms for change detection on satellite
 data.</b>
@@ -495,9 +509,11 @@ It should be noted that due to cloud cover in some periods, selected
 images (14/30) are composites of two different images. Composites were
 calculated using the higher NDVI value between two images.
 
+<p align="center">
 <img src="media/exercise_tatra_mountains_1984_2016.png" title="Tatra Mountains 1984-2016" alt="Point 1" width="1080"/>
+</p>
 
-<div>
+<div align="center">
 
 <b>Left: Landsat 5 TM 31.07.1984, RGB 321; right: Landsat 8 OLI
 8.09.2016, RGB 432</b>
@@ -679,8 +695,9 @@ dev.off() # turn off the device - save .png image to working directory
 ```
 
 This is the result of running the code above.
-
+<p align="center">
 <img src="media/exercise_chips_example.png" title="Point 1. Bark beetle outbreak" alt="Point 1 - chips" width="1080"/>
+</p>
 
 As you can see we managed to plot the whole timeseries in one image,
 which allows for easier visual comparison of the images.
@@ -781,8 +798,9 @@ dev.off() # turn off the device - save .png image to working directory
 ```
 
 The result of the above chunk of code should look like this.
-
+<p align="center">
 <img src="media/exercise_trajectory_example.png" title="Point 1. Bark beetle outbreak" alt="Point 1 - spectral trajectories" width="1080"/>
+</p>
 
 Now we can automate our processing by looping previous functions and
 merging two output images into one containing both chips and
@@ -936,8 +954,9 @@ dev.off()
 ```
 
 All of the resulting images should be looking like the example below.
-
+<p align="center">
 <img src="media/exercise_all_elements_example.png" title="Point 1. Bark beetle outbreak" alt="Point 1 - all elements" width="1080"/>
+</p>
 
 Now analyze the resulting 9 images. Focus on recognizing changes visible
 in the chips; try to find the year of change based on the visual
