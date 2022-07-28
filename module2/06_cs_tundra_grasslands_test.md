@@ -29,7 +29,7 @@ arctic-alpine tundra. Examples of vegetation classes including
 grasslands are presented below (**Figure 1**).
 
 <p align="center">
-<img src="media_exercise/figure1.PNG" title="Subalpine and alpine vegetation." alt="Figure 1" width="1080"/>
+<img src="figure1.PNG" title="Subalpine and alpine vegetation." alt="Figure 1" width="1080"/>
 </p>
 
 <div align="center">
@@ -69,9 +69,9 @@ images collected in 2018 within the growing season (exact dates are 31
 May, 7 August, 27 August and 18 September, June and July images were
 unfortunately covered by clouds). In case of raster data there are two
 ways you can approach this case study: use the attached preprocessed
-data or go to *–THIS TUTORIAL–* to download raw data and preprocess it
-to the desired state yourself. In any case load the data to the variable
-*image*.
+data or go to ***–THIS TUTORIAL–*** to download raw data and preprocess
+it to the desired state yourself. In any case load the data to the
+variable *image*.
 
 ``` r
 image <- brick("ABCD_stacked_res.bsq")
