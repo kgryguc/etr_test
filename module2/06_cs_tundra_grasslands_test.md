@@ -11,31 +11,50 @@ title: Monitoring tundra grasslands (Karkonosze)
 
 ## Introduction
 
-In this case study we will focus on classyfing non-forest tundra
+In this case study we will focus on classifying non-forest tundra
 vegetation in higher parts of Karkonosze Mountains, laying on the
 Polish-Czech border. The process will consist of extracting reference
-data from multitemporal imagery and classifying it with Support Vector
-Machine algorithm. Additional analysis will consist of feature
-importance assessment.
+data from multitemporal Sentinel-2 imagery and classifying it with
+Support Vector Machine algorithm. Additional analysis will consist of
+feature importance assessment performed for grasslands class as the main
+object of the study.
 
 ### Study area
 
-**TO BE COMPLETED**
+The area is located in Polish and Czech Karkonosze/Krkonoše Mountains
+within the borders of national parks. The highest parts of mountains
+cover two plant floors: subalpine (1250–1450 m a.s.l.), and alpine zone
+(above 1450 m a.s.l.) and it is considered unique in this region of
+arctic-alpine tundra. Examples of vegetation classes including
+grasslands are presented below (**Figure 1**).
+
+<p align="center">
+<img src="media_exercise/figure1.PMG" title="Subalpine and alpine vegetation." alt="Figure 1" width="1080"/>
+</p>
+
+<div align="center">
+
+<b>Figure 1. Subalpine and alpine vegetation.</b>
+
+</div>
+
+The study area on a much more detailed scale will be explored in Module
+4 on hyperspectral data (case study of the same name).
 
 ### Data
 
-**TO BE COMPLETED** (tbd: here or when data is loaded into the
-environment)
+**TO BE COMPLETED** (to be decided: description of data here or when
+data is loaded into the environment)
 
 ## Getting started
 
-### Enironment preperation: loading required libraries and data
+### Environment preparation: loading required libraries and data
 
 To start with, we want to load necessary libraries and data and set up
 some initial variables, which we will use further down the line.
 
 Firstly, load required libraries into the environment: rgdal, raster,
-caret, and kernlab. Functions included in this packages will be used
+caret, and kernlab. Functions included in these packages will be used
 further in this case study.
 
 ``` r
@@ -46,16 +65,21 @@ library(kernlab)
 ```
 
 Now we can start with loading up the required data. We shall start with
-the raster data. The imagery used in this case study are 4 Sentinel-2
-images collected in the 2018 (exact dates are 31 May, 7 August, 27
-August and 18 September). In case of raster data there are two ways you
-can approach this case study: use the attached preprocessed data or go
-to –THIS TUTORIAL– to download raw data and proprocess it to the desired
-state yourself. In any case load the data to the variable *image*.
+the raster data. The imagery used in this case study are Sentinel-2
+images collected in 2018 within the growing season (exact dates are 31
+May, 7 August, 27 August and 18 September, June and July images were
+unfortunately covered by clouds). In case of raster data there are two
+ways you can approach this case study: use the attached preprocessed
+data or go to *–THIS TUTORIAL–* to download raw data and preprocess it
+to the desired state yourself. In any case load the data to the variable
+*image*.
 
 ``` r
 image <- brick("ABCD_stacked_res.bsq")
 ```
+
+**TO BE COMPLETED** (to be decided: description of data preprocessing
+steps: masking clouds, shadows and water here, or in the tutorial)
 
 Now add the vector reference data to our workspace. It consists of field
 collected polygons with appropriate classes assigned, which will be used
@@ -69,7 +93,7 @@ reference <- readOGR("reference_data.shp", "reference_data")
 ### Reference values extraction
 
 The two main required data sources are now loaded into the workspace, so
-we can proceed with preparing data for classifciation. First of all, we
+we can proceed with preparing data for classification. First of all, we
 need to extract pixel values from loaded images of areas covered by the
 reference data. In order to do that we will use our own function, which
 will assign each pixel in each polygon values from spectral bands of
@@ -86,10 +110,10 @@ extract_px_val <- function(image, vector_reference, class_field_name){
 
   for (poly_ind in seq(num_polygons)) {
     s_f <- vector_reference@polygons[poly_ind]
-    klasa <- vector_reference@data[poly_ind, class_column_index]
+    class <- vector_reference@data[poly_ind, class_column_index]
     s_f_SP <- SpatialPolygons(s_f)
     poly_px_vals <- extract(image, s_f_SP, df = TRUE)
-    poly_px_vals <- cbind(poly_px_vals[ ,2: ncol(poly_px_vals)], klasa, poly_ind)
+    poly_px_vals <- cbind(poly_px_vals[ ,2: ncol(poly_px_vals)], class, poly_ind)
     obs_data <- rbind(obs_data, poly_px_vals)
     
     print(counter / num_polygons)
@@ -103,7 +127,7 @@ Now we shall use the above function to extract the values with the data
 from the reference dataset we loaded earlier.
 
 ``` r
-pixel_reference <- extract_px_val(image, reference, "klasa")
+pixel_reference <- extract_px_val(image, reference, "class")
 ```
 
 We need to fix the column names in order to use them later.
@@ -115,15 +139,17 @@ names(pixel_reference)[1:40] <- fixed_names[seq(1, length(fixed_names) ,by = 4)]
 
 We now have all the data we need to proceed. We will start with
 classifying single scenes, then multitemporal classification and end
-with best features selection.
+with best features selected. Each classification will be performed using
+the Support Vector Machine algorithm and radial as the kernel function,
+which was preceded by tuning its parameters (see below).
 
 ### Classification scenario 1: single scene
 
-We will start single scene classification process with extracting only
-Sentinel-2 bands values from the single scene. In case of the earliest
-acquired image (31 May) These will be the first 10 columns of the
-*pixel_reference* data frame, as well two last columns including class
-names and polygon indices.
+We will start the single scene classification process with extracting
+only Sentinel-2 bands values from the single scene. In case of the
+earliest acquired image (31 May) these will be the first 10 columns of
+the *pixel_reference* data frame, as well two last columns including
+class names and polygon indices.
 
 ``` r
 pixel_reference <- pixel_reference[c(1:10, 41,42)]
@@ -136,17 +162,17 @@ number.
 set.seed(1410)
 ```
 
-We can now assess how many **pixel samples** for every class we acuqired
+We can now assess how many **pixel samples** for every class we acquired
 during values extraction.
 
 ``` r
-table(pixel_reference$klasa)
+table(pixel_reference$class)
 ```
 
 In comparison we can see how many **polygons** for each class.
 
 ``` r
-table(reference@data$klasa)
+table(reference@data$class)
 ```
 
 In this part we will divide our reference dataset into training and
@@ -155,62 +181,59 @@ number of polygons in each of 2 parts. Notice that the number of pixels
 may be different in both sets due to differences in polygon sizes.
 
 ``` r
-trainIndex <- createDataPartition(reference@data$klasa, p = 0.5, list = FALSE)
+trainIndex <- createDataPartition(reference@data$class, p = 0.5, list = FALSE)
 
-#select pixel observations using polygon indexes
 trainData <- pixel_reference[ pixel_reference$poly_ind %in% trainIndex, ]
 valData <- pixel_reference[ !(pixel_reference$poly_ind %in% trainIndex), ]
 
-table(trainData$klasa)
-table(valData$klasa)
+table(trainData$class)
+table(valData$class)
 ```
 
-Now that we established the the training and validation datasets we can
-perfrom a step called tuning classification parameters. The classifier
+Now that we established the training and validation datasets we can
+perform a step called tuning classification parameters. The classifier
 chosen for this case study is Support Vector Machine. –**TO BE
-COMPLETED** (info about kernels, parameters make student uderstand what
+COMPLETED** (info about kernels, parameters make student understand what
 is happening below).
 
-For determining best parameters we will use tenfold crossvalidation of
+For determining best parameters we will use tenfold cross validation of
 results achieved with different sets of predetermined parameters.
 
 ``` r
-#tune classifier parameters
-#assess predictor importance
 control <- trainControl(method="cv", number = 10)
 
 tune_params <- data.frame(C = c(10,100,100), sigma = c(0.1, 0.5, 0.95))
 
-# train the model
-model <- train( trainData[ , 1:10], trainData$klasa, method = "svmRadial", trControl = control,
+model <- train( trainData[ , 1:10], trainData$class, method = "svmRadial", trControl = control,
                 tuneGrid = tune_params)  
 
-#Predictor aparent importance
 varImp(model)
 plot(varImp(model))
 ```
 
-``` r
-#infere classes for validation dataset
-pred <- predict(model, valData[ , 1:10])
-confusionMatrix(pred, valData$klasa, mode = "everything")
-```
+We will now assess the accuracy of the model by applying it to the
+validation dataset.
 
 ``` r
-#subset image spectrally
+pred <- predict(model, valData[ , 1:10])
+confusionMatrix(pred, valData$class, mode = "everything")
+```
+
+In this part of the exercise we will use the model to classify the
+image. In order to do that we no need to extract the bands from the
+multitemporal data brick, which were acquired on 30 May.
+
+``` r
 first_10_img <- subset(image, c(1:10))
 names(first_10_img) <- names(trainData)[1:10]
 ```
 
-``` r
-#subset image spatially
-first_10_img_croped <- crop(first_10_img, extent(first_10_img, 1, 100, 1, 100))
-```
+And now we can apply the model to the appropriate 10 bands. This will
+classify the image into the classes provided earlier with the reference
+dataset.
 
 ``` r
-#classify whole raster stack
-#kernlab throws error not related to this classification task
-raster:predict(first_10_img_croped, model, filename = "A_SVM_cls.tif", progress = "text", format = "GTiff")
+raster:predict(first_10_img, model, filename = "A_SVM_cls.tif", progress = "text", format = "GTiff")
 ```
 
 We have successfully classified 1 of the 4 images contained in the case
