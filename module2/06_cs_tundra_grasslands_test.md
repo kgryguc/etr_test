@@ -29,7 +29,7 @@ arctic-alpine tundra. Examples of vegetation classes including
 grasslands are presented below (**Figure 1**).
 
 <p align="center">
-<img src="media_exercise/figure1.PMG" title="Subalpine and alpine vegetation." alt="Figure 1" width="1080"/>
+<img src="media_exercise/figure1.PNG" title="Subalpine and alpine vegetation." alt="Figure 1" width="1080"/>
 </p>
 
 <div align="center">
@@ -43,8 +43,7 @@ The study area on a much more detailed scale will be explored in Module
 
 ### Data
 
-**TO BE COMPLETED** (to be decided: description of data here or when
-data is loaded into the environment)
+#### TO BE COMPLETED (to be decided: description of data here or when data is loaded into the environment)
 
 ## Getting started
 
@@ -78,8 +77,7 @@ to the desired state yourself. In any case load the data to the variable
 image <- brick("ABCD_stacked_res.bsq")
 ```
 
-**TO BE COMPLETED** (to be decided: description of data preprocessing
-steps: masking clouds, shadows and water here, or in the tutorial)
+#### TO BE COMPLETED (to be decided: description of data preprocessing steps: masking clouds, shadows and water here, or in the tutorial)
 
 Now add the vector reference data to our workspace. It consists of field
 collected polygons with appropriate classes assigned, which will be used
@@ -192,9 +190,9 @@ table(valData$class)
 
 Now that we established the training and validation datasets we can
 perform a step called tuning classification parameters. The classifier
-chosen for this case study is Support Vector Machine. –**TO BE
-COMPLETED** (info about kernels, parameters make student understand what
-is happening below).
+chosen for this case study is Support Vector Machine.
+
+#### TO BE COMPLETED (info about kernels, parameters make student understand what is happening below).
 
 For determining best parameters we will use tenfold cross validation of
 results achieved with different sets of predetermined parameters.
